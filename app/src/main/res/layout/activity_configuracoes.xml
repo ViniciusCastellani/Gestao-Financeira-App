@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_grey"
+    tools:context=".ConfiguracoesActivity">
+
+
+    <LinearLayout
+        android:layout_width="410dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginTop="200dp">
+
+        <EditText
+            android:id="@+id/editTextNomeUsuarioCadastro"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="@drawable/custom_edittext_login"
+            android:drawableLeft="@drawable/person_icon_light"
+            android:drawablePadding="8dp"
+            android:hint="Atualizar Nome"
+            android:padding="8dp"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/cardview_dark_background"
+            android:textColorHint="@color/gray"
+            android:textSize="11sp" />
+
+        <EditText
+            android:id="@+id/editTextEmailUsuarioCadastro"
+            android:layout_width="300dp"
+            android:layout_height="47dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/custom_edittext_login"
+            android:drawableLeft="@drawable/email_icon_light"
+            android:drawablePadding="8dp"
+            android:hint="Atualizar Email"
+            android:padding="8dp"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/cardview_dark_background"
+            android:textColorHint="@color/gray"
+            android:textSize="11sp" />
+
+        <EditText
+            android:id="@+id/editTextSenhaUsuarioCadastro"
+            android:layout_width="300dp"
+            android:layout_height="52dp"
+            android:layout_gravity="center"
+            android:background="@drawable/custom_edittext_login"
+            android:drawableLeft="@drawable/lock_icon_light"
+
+            android:drawablePadding="8dp"
+            android:hint="Atualizar Senha"
+            android:inputType="textPassword"
+            android:padding="8dp"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/cardview_dark_background"
+            android:textColorHint="@color/gray"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/butttonCadastro"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="@color/purple"
+            android:text="Atualizar"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:cornerRadius="20dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutOptionsTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/dark_grey"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp"
+            android:paddingTop="8dp">
+
+            <!-- Botão de Opções -->
+            <Button
+                android:id="@+id/btnOptions"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/purple"
+                android:onClick="mudarTelaConfiguracao"
+                android:text="Opções"
+                android:textColor="@color/white" />
+
+            <!-- Botão de Metas -->
+            <Button
+                android:id="@+id/btnGoals"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/purple"
+                android:onClick="mudarTelaMetas"
+                android:text="Metas"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutOptionsBottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/dark_grey"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp"
+            android:paddingBottom="8dp">
+
+            <!-- Botão de Tela Inicial -->
+            <Button
+                android:id="@+id/btnHome"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/purple"
+                android:layout_weight="1"
+                android:onClick="mudarTelaMain"
+                android:text="Inicio"
+                android:textColor="@color/white" />
+
+            <!-- Botão de Gráficos -->
+            <Button
+                android:id="@+id/btnCharts"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/purple"
+                android:layout_weight="1"
+                android:onClick="mudarTelaGrafico"
+                android:text="Gráficos"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF141118">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical">
+
+        <!-- Botões de filtro do gráfico de linha e botão de calendário -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="15dp">
+
+            <RadioGroup
+                android:id="@+id/radioGroupLineChartFilter"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:paddingEnd="10dp">
+
+                <RadioButton
+                    android:id="@+id/radioButtonMensal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mensal"
+                    android:textColor="@color/white" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonSemestre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Semestral"
+                    android:textColor="@color/white" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonAnual"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Anual"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/buttonCalendario"
+                    android:layout_width="48dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:drawableLeft="@drawable/calendar_icon_dark"
+                    android:drawablePadding="-10dp" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <!-- Texto acima do gráfico de linha -->
+        <TextView
+            android:id="@+id/textViewSaldoGeral"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingTop="5dp"
+            android:text="Despesas X Renda"
+            android:textColor="@color/purple"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Gráfico de linha -->
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/lineChart"
+            android:layout_width="401dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="10dp"
+            android:paddingEnd="10dp"
+            android:paddingRight="10dp" />
+
+        <!-- Texto acima do gráfico circular -->
+        <TextView
+            android:id="@+id/textViewGraficoCirular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="10dp"
+            android:text="Bancos"
+            android:textColor="@color/purple"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Botões de filtro do gráfico circular -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="15dp">
+
+            <RadioGroup
+                android:id="@+id/radioGroupLinePieFilter"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:paddingEnd="10dp">>
+
+                <RadioButton
+                    android:id="@+id/radioButtonDespesa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Despesa"
+                    android:textColor="@color/white" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonRenda"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Renda"
+                    android:textColor="@color/white" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <!-- Gráfico circular -->
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pieChart"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_marginTop="20dp"
+            android:padding="25dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutOptionsTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/dark_grey"
+            android:orientation="horizontal"
+            android:paddingTop="8dp"
+            android:paddingHorizontal="8dp">
+
+            <!-- Botão de Opções -->
+            <Button
+                android:id="@+id/btnOptions"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/purple"
+                android:onClick="mudarTelaConfiguracao"
+                android:text="Opções"
+                android:textColor="@color/white" />
+
+            <!-- Botão de Metas -->
+            <Button
+                android:id="@+id/btnGoals"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/purple"
+                android:onClick="mudarTelaMetas"
+                android:text="Metas"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutOptionsBottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/dark_grey"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp"
+            android:paddingHorizontal="8dp">
+
+            <!-- Botão de Tela Inicial -->
+            <Button
+                android:id="@+id/btnHome"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/purple"
+                android:layout_weight="1"
+                android:onClick="mudarTelaMain"
+                android:text="Inicio"
+                android:textColor="@color/white" />
+
+            <!-- Botão de Gráficos -->
+            <Button
+                android:id="@+id/btnCharts"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/purple"
+                android:layout_weight="1"
+                android:onClick="mudarTelaGrafico"
+                android:text="Gráficos"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
