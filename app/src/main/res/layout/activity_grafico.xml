@@ -22,7 +22,7 @@
             android:paddingBottom="15dp">
 
             <RadioGroup
-                android:id="@+id/radioGroupLineChartFilter"
+                android:id="@+id/radioGroupFiltroTempo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -38,7 +38,7 @@
                     android:textColor="@color/white" />
 
                 <RadioButton
-                    android:id="@+id/radioButtonSemestre"
+                    android:id="@+id/radioButtonSemestral"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Semestral"
@@ -77,7 +77,7 @@
 
         <!-- Gráfico de linha -->
         <com.github.mikephil.charting.charts.LineChart
-            android:id="@+id/lineChart"
+            android:id="@+id/lineChartDespesasRenda"
             android:layout_width="401dp"
             android:layout_height="250dp"
             android:layout_marginTop="20dp"
@@ -87,7 +87,7 @@
 
         <!-- Texto acima do gráfico circular -->
         <TextView
-            android:id="@+id/textViewGraficoCirular"
+            android:id="@+id/textViewBancos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="20dp"
@@ -107,7 +107,7 @@
             android:paddingBottom="15dp">
 
             <RadioGroup
-                android:id="@+id/radioGroupLinePieFilter"
+                android:id="@+id/radioGroupFiltroTipoRegistro"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -134,7 +134,7 @@
 
         <!-- Gráfico circular -->
         <com.github.mikephil.charting.charts.PieChart
-            android:id="@+id/pieChart"
+            android:id="@+id/pieChartBancos"
             android:layout_width="match_parent"
             android:layout_height="140dp"
             android:layout_marginTop="20dp"
@@ -212,8 +212,8 @@
                 android:layout_width="20dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:backgroundTint="@color/purple"
                 android:layout_weight="1"
+                android:backgroundTint="@color/purple"
                 android:onClick="mudarTelaGrafico"
                 android:text="Gráficos"
                 android:textColor="@color/white" />

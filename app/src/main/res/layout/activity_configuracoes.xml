@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/dark_grey"
-    tools:context=".ConfiguracoesActivity">
+    tools:context=".activities.ConfiguracoesActivity">
 
 
     <LinearLayout
@@ -17,7 +17,7 @@
         android:layout_marginTop="200dp">
 
         <EditText
-            android:id="@+id/editTextNomeUsuarioCadastro"
+            android:id="@+id/editTextNomeUsuarioConfiguracoes"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -32,7 +32,7 @@
             android:textSize="11sp" />
 
         <EditText
-            android:id="@+id/editTextEmailUsuarioCadastro"
+            android:id="@+id/editTextEmailUsuarioConfiguracao"
             android:layout_width="300dp"
             android:layout_height="47dp"
             android:layout_gravity="center"
@@ -49,7 +49,7 @@
             android:textSize="11sp" />
 
         <EditText
-            android:id="@+id/editTextSenhaUsuarioCadastro"
+            android:id="@+id/editTextSenhaUsuarioConfiguracao"
             android:layout_width="300dp"
             android:layout_height="52dp"
             android:layout_gravity="center"
@@ -66,11 +66,12 @@
             android:textSize="11sp" />
 
         <Button
-            android:id="@+id/butttonCadastro"
+            android:id="@+id/butttonAtualizarUsuario"
             android:layout_width="200dp"
             android:layout_height="60dp"
             android:layout_marginTop="30dp"
             android:backgroundTint="@color/purple"
+            android:onClick="atualizarUsuario"
             android:text="Atualizar"
             android:textColor="@android:color/white"
             android:textSize="18sp"
@@ -102,7 +103,6 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/purple"
-                android:onClick="mudarTelaConfiguracao"
                 android:text="Opções"
                 android:textColor="@color/white" />
 
@@ -135,8 +135,8 @@
                 android:layout_width="20dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:backgroundTint="@color/purple"
                 android:layout_weight="1"
+                android:backgroundTint="@color/purple"
                 android:onClick="mudarTelaMain"
                 android:text="Inicio"
                 android:textColor="@color/white" />
@@ -147,8 +147,8 @@
                 android:layout_width="20dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:backgroundTint="@color/purple"
                 android:layout_weight="1"
+                android:backgroundTint="@color/purple"
                 android:onClick="mudarTelaGrafico"
                 android:text="Gráficos"
                 android:textColor="@color/white" />

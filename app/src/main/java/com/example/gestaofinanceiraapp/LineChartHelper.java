@@ -10,9 +10,9 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.ValueFormatter;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class LineChartHelper {
-
     private LineChart lineChart;
 
     public LineChartHelper(LineChart lineChart) {
@@ -72,11 +72,15 @@ public class LineChartHelper {
         ArrayList<Entry> entriesDespesas = new ArrayList<>();
 
         for (FinancialData data : financialDataList) {
-            float monthValue = getMonthValue(data.getMonth()); // Converte o nome do mês em um valor numérico
+            String dataInteira = data.getData();
+            System.out.println(dataInteira);
+            String[] dataSeparada = dataInteira.split("/");
+            System.out.println(Arrays.toString(dataSeparada));
+            float mes = Float.parseFloat(dataSeparada[1]);
             if (data.getTipo().equals("Renda")) {
-                entriesRenda.add(new Entry(monthValue, data.getValue()));
+                entriesRenda.add(new Entry(mes, (float) data.getValor()));
             } else if (data.getTipo().equals("Despesa")) {
-                entriesDespesas.add(new Entry(monthValue, data.getValue()));
+                entriesDespesas.add(new Entry(mes, (float) data.getValor()));
             }
         }
 

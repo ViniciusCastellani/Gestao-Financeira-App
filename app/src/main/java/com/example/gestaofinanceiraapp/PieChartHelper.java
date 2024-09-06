@@ -46,9 +46,9 @@ public class PieChartHelper {
 
         // Calcular o total de renda e despesas por banco
         for (FinancialData data : financialDataList) {
-            String banco = data.getBank();
-            float valor = data.getTipo().equals("Renda") ? data.getValue() : -data.getValue();
-            totalPorBanco.put(banco, totalPorBanco.getOrDefault(banco, 0f) + valor);
+            String banco = data.getNomeBanco();
+            double valor = data.getTipo().equals("Renda") ? data.getValor() : -data.getValor();
+            totalPorBanco.put(banco, (float) (totalPorBanco.getOrDefault(banco, 0f) + valor));
         }
 
         ArrayList<PieEntry> entries = new ArrayList<>();
@@ -59,11 +59,11 @@ public class PieChartHelper {
             totalGeral += valor;
         }
         for (String banco : totalPorBanco.keySet()) {
-            float totalBanco = totalPorBanco.get(banco);
-            float porcentagemBanco = (totalBanco / totalGeral) * 100;
+            double totalBanco = totalPorBanco.get(banco);
+            double porcentagemBanco = (totalBanco / totalGeral) * 100;
 
             // Adicionar entrada para a porcentagem total do banco, incluindo o nome do banco
-            entries.add(new PieEntry(porcentagemBanco, banco));
+            entries.add(new PieEntry((float) porcentagemBanco, banco));
         }
 
         PieDataSet dataSet = new PieDataSet(entries, "");

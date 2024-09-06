@@ -4,116 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:background="@color/dark_grey"
     android:fitsSystemWindows="true"
-    tools:context=".MetasActivity">
-
+    tools:context=".activities.MetasActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true">
-
+        <!-- Add any toolbar or other views inside the AppBarLayout if needed -->
     </com.google.android.material.appbar.AppBarLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
+    <!-- New Meta Button -->
+    <Button
+        android:id="@+id/btnNewMeta"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="200dp">
+        android:layout_below="@id/appBarLayout"
+        android:layout_margin="16dp"
+        android:layout_centerHorizontal="true"
+        android:text="New Meta"
+        android:backgroundTint="@color/purple"
+        android:textColor="@color/white" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/editTextSenhaLogin"
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="0.7"
-                android:background="@drawable/custom_edittext_login"
-                android:drawablePadding="8dp"
-
-                android:hint="Carro Novo"
-                android:padding="8dp"
-                android:textColor="@color/white"
-                android:textColorHighlight="@color/cardview_dark_background"
-                android:textColorHint="@color/gray"
-                android:textSize="11sp" />
-
-            <ProgressBar
-                android:id="@+id/progressBar"
-                style="?android:attr/progressBarStyle"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginRight="20dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/editTextEmailLogin"
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="0.7"
-                android:background="@drawable/custom_edittext_login"
-                android:drawablePadding="8dp"
-                android:hint="Viagem Europa"
-                android:padding="8dp"
-                android:textColor="@color/white"
-                android:textColorHighlight="@color/cardview_dark_background"
-                android:textColorHint="@color/gray"
-                android:textSize="11sp" />
-
-            <ProgressBar
-                android:id="@+id/progressBar2"
-                style="?android:attr/progressBarStyle"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginRight="20dp" />
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/butttonLogin"
-            android:layout_width="200dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:backgroundTint="@color/purple"
-            android:drawableLeft="@drawable/baseline_add_24"
-            android:text="Nova Meta"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
-            app:cornerRadius="20dp" />
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
+    <!-- RecyclerView to display meta cards -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"/>
+        android:layout_height="0dp"
+        android:layout_below="@id/btnNewMeta"
+        android:layout_above="@id/linearLayoutOptionsBottom"
+        android:padding="8dp" />
 
+    <!-- Bottom buttons menu -->
     <LinearLayout
+        android:id="@+id/linearLayoutOptionsBottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -134,9 +60,9 @@
                 android:id="@+id/btnOptions"
                 android:layout_width="20dp"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/purple"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:backgroundTint="@color/purple"
                 android:onClick="mudarTelaConfiguracao"
                 android:text="Opções"
                 android:textColor="@color/white" />
@@ -146,19 +72,16 @@
                 android:id="@+id/btnGoals"
                 android:layout_width="20dp"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/purple"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:onClick="mudarTelaMetas"
+                android:backgroundTint="@color/purple"
                 android:text="Metas"
                 android:textColor="@color/white" />
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linearLayoutOptionsBottom"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:background="@color/dark_grey"
             android:orientation="horizontal"
             android:paddingHorizontal="8dp"
@@ -169,9 +92,9 @@
                 android:id="@+id/btnHome"
                 android:layout_width="20dp"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/purple"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:backgroundTint="@color/purple"
                 android:onClick="mudarTelaMain"
                 android:text="Inicio"
                 android:textColor="@color/white" />
@@ -181,14 +104,13 @@
                 android:id="@+id/btnCharts"
                 android:layout_width="20dp"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/purple"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:backgroundTint="@color/purple"
                 android:onClick="mudarTelaGrafico"
                 android:text="Gráficos"
                 android:textColor="@color/white" />
         </LinearLayout>
     </LinearLayout>
-
 
 </RelativeLayout>

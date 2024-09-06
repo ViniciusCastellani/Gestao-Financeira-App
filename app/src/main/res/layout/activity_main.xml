@@ -31,17 +31,18 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="135dp"
         android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardViewBalance"
+            android:id="@+id/cardViewBalanco"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="30dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="15dp"
             android:background="@drawable/custom_edittext_login"
             android:backgroundTint="@color/dark_grey"
-            app:cardCornerRadius="30dp"
+            app:cardCornerRadius="20dp"
             app:cardElevation="20dp">
 
             <LinearLayout
@@ -78,10 +79,11 @@
             android:id="@+id/cardViewInvoices"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="30dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="15dp"
             android:background="@drawable/custom_edittext_login"
             android:backgroundTint="@color/dark_grey"
-            app:cardCornerRadius="30dp"
+            app:cardCornerRadius="20dp"
             app:cardElevation="20dp">
 
             <LinearLayout
@@ -136,10 +138,10 @@
             <Button
                 android:id="@+id/btnOptions"
                 android:layout_width="20dp"
-                android:backgroundTint="@color/purple"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:backgroundTint="@color/purple"
                 android:onClick="mudarTelaConfiguracao"
                 android:text="Opções"
                 android:textColor="@color/white" />
@@ -147,11 +149,11 @@
             <!-- Botão de Metas -->
             <Button
                 android:id="@+id/btnGoals"
-                android:backgroundTint="@color/purple"
                 android:layout_width="20dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:backgroundTint="@color/purple"
                 android:onClick="mudarTelaMetas"
                 android:text="Metas"
                 android:textColor="@color/white" />
@@ -173,9 +175,8 @@
                 android:layout_width="20dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:backgroundTint="@color/purple"
                 android:layout_weight="1"
-                android:onClick="mudarTelaMain"
+                android:backgroundTint="@color/purple"
                 android:text="Inicio"
                 android:textColor="@color/white" />
 
@@ -184,9 +185,9 @@
                 android:id="@+id/btnCharts"
                 android:layout_width="20dp"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/purple"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:backgroundTint="@color/purple"
                 android:onClick="mudarTelaGrafico"
                 android:text="Gráficos"
                 android:textColor="@color/white" />
