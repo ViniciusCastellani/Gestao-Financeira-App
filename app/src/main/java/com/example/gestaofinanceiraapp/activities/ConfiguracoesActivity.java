@@ -8,23 +8,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.NetworkResponse;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.example.gestaofinanceiraapp.ComunicacaoServer;
-import com.example.gestaofinanceiraapp.Pessoa;
+import com.example.gestaofinanceiraapp.Pessoa.Pessoa;
 import com.example.gestaofinanceiraapp.R;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.UnsupportedEncodingException;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,23 +40,32 @@ public class ConfiguracoesActivity extends AppCompatActivity {
 
         listarTodasPessoasJSON();
 
-        if (verificaEmailExistente(email)) {
-            exibirMensagemToast("Email já cadastrado");
-            return;
-        }
-
-        if (verificarCamposVazios(nome, email, senha)) return;
-
         try {
             String idPessoa = String.valueOf(p.getIdPessoa());
             p.fromJSON(pessoaJson);
-            p.setNome(nome);
-            p.setEmail(email);
-            p.setSenha(senha);
+
+            if (!nome.isEmpty()) {
+                p.setNome(nome);
+            }
+
+            if (!email.isEmpty()) {
+                if (!verificaEmailExistente(email)) {
+                    p.setEmail(email);
+                }
+                else {
+                    exibirMensagemToast("Email já cadastrado");
+                    return;
+                }
+            }
+
+            if (!senha.isEmpty()) {
+                p.setSenha(senha);
+            }
+
             String novoJson = p.toJSON();
             System.out.println(novoJson);
 
-            String url = "http://10.20.41.108:8081/pessoa/atualizar/" + idPessoa;
+            String url = "http://192.168.0.16:8081/pessoa/atualizarTodasInfo/" + idPessoa;
             cs.atualizarVolleyJson(url, novoJson, this);
 
             if (!cs.isRespostaPut()) {
@@ -86,7 +82,7 @@ public class ConfiguracoesActivity extends AppCompatActivity {
     }
 
     public void listarTodasPessoasJSON() {
-        String url = "http://10.20.41.108:8081/pessoa/listar";
+        String url = "http://192.168.0.16:8081/pessoa/listar";
         cs.listarTodasPessoasJSON(url, this);
 
         if (cs.isRespostaGet()) {

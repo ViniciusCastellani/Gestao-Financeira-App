@@ -10,19 +10,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.example.gestaofinanceiraapp.ComunicacaoServer;
 import com.example.gestaofinanceiraapp.OnClickShowText;
-import com.example.gestaofinanceiraapp.Pessoa;
+import com.example.gestaofinanceiraapp.Pessoa.Pessoa;
 import com.example.gestaofinanceiraapp.R;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,6 +45,8 @@ public class LoginActivity extends AppCompatActivity {
         listarTodasPessoasJSON();
         String emailUsuario = emailET.getText().toString().trim();
         String senhaUsuario = senhaET.getText().toString().trim();
+
+        System.out.println(listaDePessoas);
 
         if (verificarCamposVazios(emailUsuario, senhaUsuario)) return;
 
@@ -90,7 +83,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void listarTodasPessoasJSON() {
-        String url = "http://10.20.41.108:8081/pessoa/listar";
+        String url = "http://192.168.0.16:8081/pessoa/listar";
         listaDePessoas.clear();
         cs.listarTodasPessoasJSON(url, this);
         if (cs.isRespostaGet()){

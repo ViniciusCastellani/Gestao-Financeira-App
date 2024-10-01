@@ -1,6 +1,8 @@
-package com.example.gestaofinanceiraapp;
+package com.example.gestaofinanceiraapp.graficoHelper;
 
 import android.graphics.Color;
+
+import com.example.gestaofinanceiraapp.FluxoFinancas.FinancialData;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;

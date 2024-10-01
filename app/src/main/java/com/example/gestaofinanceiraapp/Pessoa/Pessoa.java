@@ -1,4 +1,7 @@
-package com.example.gestaofinanceiraapp;
+package com.example.gestaofinanceiraapp.Pessoa;
+
+import com.example.gestaofinanceiraapp.FluxoFinancas.FluxoFinanceiro;
+import com.example.gestaofinanceiraapp.Meta.Meta;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

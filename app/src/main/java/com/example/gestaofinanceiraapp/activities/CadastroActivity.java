@@ -8,24 +8,15 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.NetworkResponse;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.example.gestaofinanceiraapp.ComunicacaoServer;
 import com.example.gestaofinanceiraapp.OnClickShowText;
-import com.example.gestaofinanceiraapp.Pessoa;
+import com.example.gestaofinanceiraapp.Pessoa.Pessoa;
 import com.example.gestaofinanceiraapp.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.UnsupportedEncodingException;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,7 +56,7 @@ public class CadastroActivity extends AppCompatActivity {
         try {
             jsonPessoa = gerarJson(nomeUsuario, emailUsuario, senhaUsuario);
             System.out.println(jsonPessoa);
-            String url = "http://10.20.41.108:8081/pessoa";
+            String url = "http://192.168.0.16:8081/pessoa";
             cs.enviarJSON(jsonPessoa, url, this);
 
             if (!cs.isRespostaPost()) {
@@ -84,7 +75,7 @@ public class CadastroActivity extends AppCompatActivity {
 
     public void listarTodasPessoasJSON() {
         listaDePessoas.clear();
-        String url = "http://10.20.41.108:8081/pessoa/listar";
+        String url = "http://192.168.0.16:8081/pessoa/listar";
         cs.listarTodasPessoasJSON(url, this);
         if (cs.isRespostaGet()) {
             for (Pessoa pessoa : cs.getListaDePessoas()){

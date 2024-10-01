@@ -1,4 +1,4 @@
-package com.example.gestaofinanceiraapp;
+package com.example.gestaofinanceiraapp.FluxoFinancas;
 
 import org.json.JSONObject;
 

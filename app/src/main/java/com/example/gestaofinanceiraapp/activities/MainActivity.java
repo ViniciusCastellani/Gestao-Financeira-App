@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.gestaofinanceiraapp.Pessoa;
+import com.example.gestaofinanceiraapp.Pessoa.Pessoa;
 import com.example.gestaofinanceiraapp.R;
 
 public class MainActivity extends AppCompatActivity {

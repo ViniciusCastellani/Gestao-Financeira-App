@@ -1,7 +1,6 @@
 package com.example.gestaofinanceiraapp;
 
 import android.content.Context;
-import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;
@@ -10,6 +9,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.gestaofinanceiraapp.Pessoa.Pessoa;
 
 import org.json.JSONArray;
 import org.json.JSONException;

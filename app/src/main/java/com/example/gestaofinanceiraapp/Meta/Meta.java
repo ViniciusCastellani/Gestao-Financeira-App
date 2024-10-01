@@ -1,4 +1,4 @@
-package com.example.gestaofinanceiraapp;
+package com.example.gestaofinanceiraapp.Meta;
 
 import org.json.JSONException;
 import org.json.JSONObject;

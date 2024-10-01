@@ -16,9 +16,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.gestaofinanceiraapp.ComunicacaoServer;
-import com.example.gestaofinanceiraapp.Meta;
-import com.example.gestaofinanceiraapp.MetaAdapter;
-import com.example.gestaofinanceiraapp.Pessoa;
+import com.example.gestaofinanceiraapp.Meta.Meta;
+import com.example.gestaofinanceiraapp.Meta.MetaAdapter;
+import com.example.gestaofinanceiraapp.Pessoa.Pessoa;
 import com.example.gestaofinanceiraapp.R;
 
 import java.util.ArrayList;
@@ -151,7 +151,7 @@ public class MetasActivity extends AppCompatActivity {
 
             System.out.println(novoJson);
 
-            String url = "http://10.20.41.108:8081/pessoa/meta/" + p.getIdPessoa();
+            String url = "http://192.168.0.16:8081/pessoa/meta/" + p.getIdPessoa();
             cs.atualizarVolleyJson(url, novoJson, this);
 
             if (!cs.isRespostaPut()) {

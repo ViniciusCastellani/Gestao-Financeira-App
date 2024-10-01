@@ -1,13 +1,14 @@
-package com.example.gestaofinanceiraapp;
+package com.example.gestaofinanceiraapp.graficoHelper;
 
 import android.graphics.Color;
+
+import com.example.gestaofinanceiraapp.FluxoFinancas.FinancialData;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.PercentFormatter;
-import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;

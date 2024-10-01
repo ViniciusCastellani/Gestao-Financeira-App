@@ -6,11 +6,11 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.gestaofinanceiraapp.FinancialData;
-import com.example.gestaofinanceiraapp.FluxoFinanceiro;
-import com.example.gestaofinanceiraapp.LineChartHelper;
-import com.example.gestaofinanceiraapp.Pessoa;
-import com.example.gestaofinanceiraapp.PieChartHelper;
+import com.example.gestaofinanceiraapp.FluxoFinancas.FinancialData;
+import com.example.gestaofinanceiraapp.FluxoFinancas.FluxoFinanceiro;
+import com.example.gestaofinanceiraapp.graficoHelper.LineChartHelper;
+import com.example.gestaofinanceiraapp.Pessoa.Pessoa;
+import com.example.gestaofinanceiraapp.graficoHelper.PieChartHelper;
 import com.example.gestaofinanceiraapp.R;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.charts.PieChart;
